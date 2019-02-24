@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="text-align: center;">
+{% for dice in dices %}
+    {% for img in images %}
+    {% if dice + ".png" == img %}
+        <img src="{{ url_for('static', filename='images/' + img) }}">
+    {% endif %}
+    {% endfor %}
+{% endfor %}
+</div>
+{% endblock content %}
